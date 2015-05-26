@@ -15,6 +15,8 @@ RUN	apt-get update && \
 	wget -O - http://netcologne.dl.sourceforge.net/project/urbackup/Server/1.4.7/urbackup-server-1.4.7.tar.gz | tar zxf - && \
 	cd urbackup* && \
 	./configure --enable-headless && \
+	make && \
+	make install && \
 	cd /root/ && \
 	rm -rf urbackup*
 
