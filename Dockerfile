@@ -27,5 +27,5 @@ EXPOSE 35623
 
 VOLUME /data
 
-ENTRYPOINT ["/usr/local/sbin/start_urbackup_client"]
+ENTRYPOINT ["start_urbackup_client"]
 CMD ["--no_daemon"]
