@@ -6,8 +6,6 @@
 FROM ubuntu:trusty
 MAINTAINER Johnny Antonsen <johnny@jumpingmushroom.com>
 
-VOLUME /data
-
 RUN	apt-get update && \
 	apt-get -y upgrade && \
 	apt-get -y install libcrypto++-dev build-essential wget libcurl3 && \
