@@ -16,6 +16,8 @@ RUN	apt-get update && \
 	tar zxvf urbackup* && \
 	cd urbackup* && \
 	./configure --enable-headless && \
+	cd /root/ && \
+	rm -rf urbackup*
 
 # Ports to expose
 EXPOSE 35621
