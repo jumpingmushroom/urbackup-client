@@ -9,7 +9,7 @@ MAINTAINER Johnny Antonsen <johnny@jumpingmushroom.com>
 VOLUME /data
 
 RUN	apt-get update && \
-	apt-get upgrade && \
+	apt-get -qy --force-yes dist-upgrade && \
 	apt-get install -y libcrypto++-dev build-essential && \
 	cd /root && \
 	wget http://netcologne.dl.sourceforge.net/project/urbackup/Server/1.4.7/urbackup-server-1.4.7.tar.gz && \
@@ -21,6 +21,8 @@ RUN	apt-get update && \
 EXPOSE 35621
 EXPOSE 35622
 EXPOSE 35623
+
+VOLUME /data
 
 ENTRYPOINT ["/usr/local/sbin/start_urbackup_client"]
 CMD ["--no_daemon"]
