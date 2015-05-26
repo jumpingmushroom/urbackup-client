@@ -6,11 +6,13 @@
 FROM ubuntu:trusty
 MAINTAINER Johnny Antonsen <johnny@jumpingmushroom.com>
 
+ENV VERSION 1.4.7
+
 RUN	apt-get update && \
 	apt-get -y upgrade && \
 	apt-get -y install libcrypto++-dev build-essential wget && \
 	cd /root && \
-	wget -O - http://netcologne.dl.sourceforge.net/project/urbackup/Server/1.4.7/urbackup-server-1.4.7.tar.gz | tar zxf - && \
+	wget -O - http://netcologne.dl.sourceforge.net/project/urbackup/Server/$VERSION/urbackup-server-$VERSION.tar.gz | tar zxf - && \
 	cd urbackup* && \
 	./configure --enable-headless --without-mail && \
 	make && \
