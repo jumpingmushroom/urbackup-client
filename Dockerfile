@@ -8,7 +8,7 @@ MAINTAINER Johnny Antonsen <johnny@jumpingmushroom.com>
 
 RUN	apt-get update && \
 	apt-get -y upgrade && \
-	apt-get -y install libcrypto++-dev build-essential wget libcurl3 && \
+	apt-get -y install libcrypto++-dev build-essential wget curl && \
 	cd /root && \
 	wget -O - http://netcologne.dl.sourceforge.net/project/urbackup/Server/1.4.7/urbackup-server-1.4.7.tar.gz | tar zxf - && \
 	cd urbackup* && \
