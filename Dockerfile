@@ -12,8 +12,7 @@ RUN	apt-get update && \
 	apt-get -qy --force-yes dist-upgrade && \
 	apt-get install -y libcrypto++-dev build-essential && \
 	cd /root && \
-	wget http://netcologne.dl.sourceforge.net/project/urbackup/Server/1.4.7/urbackup-server-1.4.7.tar.gz && \
-	tar zxvf urbackup* && \
+	wget -O - http://netcologne.dl.sourceforge.net/project/urbackup/Server/1.4.7/urbackup-server-1.4.7.tar.gz | tar zxf - && \
 	cd urbackup* && \
 	./configure --enable-headless && \
 	cd /root/ && \
